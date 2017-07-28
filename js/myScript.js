@@ -15,6 +15,7 @@ $(function() {
             var netSalary = salary;
             if(salary > allowance) {
                 if(parseInt($("#selType").val())===2) {
+                    //Deduct allowance after check tax level
                     var salaryForAdd = salary - Math.max(salaryTaxLevel[1], allowance);
                     console.log("salaryForAdd: "+salaryForAdd);
                     var salaryForHigh = Math.min(salary, salaryTaxLevel[1]) -
@@ -38,6 +39,7 @@ $(function() {
                     });
                     
                 } else {
+                    //Deduct allowance before check tax level
                     var salaryToPayTax = salary - allowance;
                     var salaryForAdd = salaryToPayTax - salaryTaxLevel[1];
                     console.log("salaryForAdd: "+salaryForAdd);
@@ -63,7 +65,7 @@ $(function() {
                 }
             }
             
-            $("#result").html("<table class='middle'>"+
+            $("#result").html("<table>"+
                 "<tr><th nowrap>Gross Salary</th><td nowrap>&nbsp;" + salary + "&nbsp;</td></tr>"+
                 "<tr><th nowrap>Tax Free Allowance</th><td>&nbsp;" + allowance + "&nbsp;</td></tr>"+
                 "<tr><th nowrap>Tax at 20%</th><td>" + taxToPay[0] + "</td></tr>"+
