@@ -1,0 +1,38 @@
+<!-- =============================================================
+
+                    Salary Calculator
+
+ ============================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Salary Calculator</title>
+        <meta charset="utf-8">
+        <link href="css/normalizer.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/myCSS.css">
+    </head>
+    
+    <body>
+        <h1>Salary Calculator</h1>
+        
+        <div class="middle">
+            <select id="selType" name="selType">
+                <option value="1">Deduct allowance before check tax level</option>
+                <option value="2" selected>Deduct allowance after check tax level</option>
+            </select>
+            <br/><br/>
+            <label class="middle" for="salary">Input the annual salary to calculate the tax !</label>
+            <input class="middle" type="number" id="salary" name="salary" title="Enter your salary here" placeholder="Enter your salary here">
+        </div>
+        <div><button id="calcIt" class="btn">Calculate</button></div>
+        <hr>
+        <div id="result" class="middle"></div>
+        
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">
+        </script> 
+        <script src="js/myScript.js"></script>
+    </body>
